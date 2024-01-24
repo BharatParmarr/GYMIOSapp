@@ -1,0 +1,525 @@
+*{
+    color: #959d00;
+    font-family: 'Roboto', sans-serif;
+/*     
+let nav_primiry = '#480cfe'
+let white = '#ffffff'
+let black = '#000000'
+let gray = '#808080'
+let bg_color = '#eaeaea' */
+}
+
+.profile_holder{
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    width: 80vw;
+    float: right;
+    overflow: scroll;
+}
+.profile_holder::-webkit-scrollbar{
+    display: none;
+}
+.profile_holder {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  justify-content: flex-start;
+  padding-top: 2vh;
+  font-family: sans-serif;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 60%;
+    gap: 3.5vw;
+    justify-content: center;
+    align-items: center;
+}
+.profile_img {
+  width: 15vw;
+  height: 10vw;
+  overflow: hidden;
+  margin: 0 ;
+  position: relative;
+  box-shadow: 0 0 0 16px -1px var(--navbar-dark-primary);
+}
+.gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10vw;
+  height: 100%;
+  background-image: linear-gradient(to bottom, var(--navbar-dark-primary), var(--navbar-dark-primary)); 
+  display: grid;
+  border-radius: 50%;
+}
+.gradient img{
+  width: 96%;
+  height: 96%;
+  margin: 2%;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+  object-fit: cover;
+}
+.profile_name {
+  text-align: center;
+  margin-top: 3vh;
+  display: flex;
+  align-items: center;
+}
+.profile_name h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start;
+  font-size: 1.6vw;
+  float: left;
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: var(--black);
+}
+.profile_name h1 span{
+  font-size: 1.2vw;
+  font-weight: normal;
+}
+.profile_name .subtitle{
+  font-size: 1.2vw;
+  font-weight: normal;
+  color: var(--gray);
+  margin-left: 1vw;
+}
+.profile_name span button{
+  margin-left: 2vw;
+  font-size: 1.1vw;
+  padding: 0.5vw;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--navbar-dark-primary);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  height: 50%;
+}
+
+.profile_bio {
+  height: auto;
+}
+.profile_bio_mobile{
+  display: none;
+}
+.profile_bio p{
+  justify-self: self-start;
+  color: var(--black);
+
+}
+
+p {
+  font-size: 1.1vw;
+  line-height: 1.5;
+}
+
+.profile_holder .details_holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: fit-content;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.profile_stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.profile_stats_mobile{
+  display: none;
+}
+
+.profile_stats_item {
+  text-align: center;
+}
+
+.details_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.gym_stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  overflow-x: scroll;
+  border-top: 1px solid var(--gray);
+}
+.gym_stats::-webkit-scrollbar{
+    display: none;
+  }
+
+.gym_stats_item {
+  text-align: center;
+}
+
+.profile_posts {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  position: relative;
+  top: 0;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.profile_post {
+  width: 14.75vw;
+  height: 35vh;
+  border-radius: 3%;
+  overflow: hidden;
+  margin: 10px;
+
+}
+.profile_post img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile_post .like_count{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--black);
+  font-size: 1.5vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.profile_post:hover .like_count{
+  display: flex;
+}
+.profile_post .like_count p{
+  color: var(--black);
+  margin-left: 1vw;
+}
+.profile_post .like_count i{
+  margin-right: 1vw;
+}
+.profile_post .comment_count{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  font-size: 1.5vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.profile_post:hover .comment_count{
+  display: flex;
+}
+.profile_post .comment_count p{
+  color: var(--black);
+
+  margin-left: 1vw;
+}
+.profile_post .comment_count i{
+  margin-right: 1vw;
+}
+
+.profile_post .share_count{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--white);
+  font-size: 1.5vw;
+  font-weight: bold;
+  cursor: pointer;
+}
+.profile_post:hover .share_count{
+  display: flex;
+}
+.profile_post .share_count p{
+  color: var(--black);
+
+  margin-left: 1vw;
+}
+.profile_post .share_count i{
+  margin-right: 1vw;
+}
+
+/* media query */
+@media only screen and (max-width: 600px) {
+  .profile_holder{
+    width: 96vw;
+    margin-top: 0;
+    padding-top: 0;
+    gap: 0;
+  }
+  .header{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile_img{
+    width: 25vw;
+    height: 25vw;
+    margin-top: 1vh;
+  }
+  .gradient{
+    width: 100%;
+    height: 100%;
+  }
+  .gradient img{
+    width: 96%;
+    height: 96%;
+    margin: 0;
+  }
+  .profile_name{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0vh;
+  }
+  .profile_name h1{
+    font-size: 5vw;
+  }
+  .profile_name h1 span{
+    font-size: 5vw;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+  .profile_name .subtitle{
+    font-size: 3vw;
+  }
+  .profile_name span{
+   display: flex;
+   width: 100%;
+  }
+  .profile_name span button{
+    font-size: 3vw;
+    margin-top: 1vh;
+    height: 4vh;
+    width: 48%;
+  }
+  .profile_bio{
+    display: none;
+  }
+  .profile_bio_mobile{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .profile_bio_mobile p{
+    font-size: 3.4vw;
+    color: var(--gray);
+  }
+  .profile_stats{
+    display: none;
+  }
+  .profile_stats_mobile{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-around;
+    font-size: 3vw;
+  }
+  .profile_stats_mobile .profile_stats_item p{
+    color: var(--black);
+
+    font-size: 3.6vw;
+  }
+  .details_2{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .gym_stats{
+    width: 100%;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--gray);
+  }
+  .gym_stats::-webkit-scrollbar{
+    display: none;
+  }
+  .gym_stats_item p{
+    color: var(--black);
+
+    font-size: 3.4vw;
+  }
+  .profile_posts{
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+  }
+  .profile_post{
+    width: 90vw;
+    height: 90vw;
+  }
+  .profile_post img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+</head>
+<body>
+<div class="profile_holder">
+    <div class="header">
+        <div class="profile_img">
+          
+            <div class="gradient">
+            <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547" alt="">
+        </div>
+        </div>
+        <div class="details_holder">
+        <div class="profile_name">
+        <h1><span>John Doe one of the</span><span class="subtitle">admine</span> </h1>
+        <span>
+        <button>Follow</button>
+        <button>Messages</button>
+        </span>
+        </div>
+    <div class="profile_bio">
+      <p>Lorem ipsum dolor sit aspernatur asperiores voluptatem provident voluptas nesciunt.</p>
+      </div>
+    <div class="profile_stats">
+      <div class="profile_stats_item">
+          <p>Posts</p>
+          <p>100</p>
+      </div>
+      <div class="profile_stats_item">
+          <p>Followers</p>
+          <p>100</p>
+      </div>
+      <div class="profile_stats_item">
+          <p>Following</p>
+          <p>100</p>
+      </div>
+    </div>
+  </div>  
+</div>
+<div class="profile_bio_mobile">
+  <p>Lorem ipsum dolor sit aspernatur asperiores voluptatem provident voluptas nesciunt.</p>
+  </div>
+<div class="profile_stats_mobile">
+  <div class="profile_stats_item">
+      <p>Posts</p>
+      <p>100</p>
+  </div>
+  <div class="profile_stats_item">
+      <p>Followers</p>
+      <p>100</p>
+  </div>
+  <div class="profile_stats_item">
+      <p>Following</p>
+      <p>100</p>
+  </div>
+</div>
+    <hr>
+  <div class="details_2">
+        <!-- gym stats -->
+    <div class="gym_stats">
+        <div class="gym_stats_item">
+            <p>Weight</p>
+            <p>100</p>
+        </div>
+        <div class="gym_stats_item">
+            <p>Bench Press</p>
+            <p>110</p>
+        </div>
+        <div class="gym_stats_item">
+            <p>Dead Lift</p>
+            <p>200</p>
+        </div>
+        <div class="gym_stats_item">
+            <p>Squat</p>
+            <p>150</p>
+        </div>
+    </div>
+    <div class="profile_posts">
+        <div class="profile_post" onclick="open_img_big_screen()">
+            <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547?s=200" alt="">
+            <span class="like_count">
+                <i class="fas fa-heart"></i>
+                <p>100</p>
+            </span>
+            <span class="comment_count">
+                <i class="fas fa-comment"></i>
+                <p>100</p>
+            </span>
+            <span class="share_count">
+                <i class="fas fa-share"></i>
+                <p>100</p>
+            </span>
+        </div>
+        <div class="profile_post">
+            <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547?s=400" alt="">
+            <span class="like_count">
+              <i class="fas fa-heart"></i>
+              <p>100</p>
+          </span>
+          <span class="comment_count">
+              <i class="fas fa-comment"></i>
+              <p>100</p>
+          </span>
+          <span class="share_count">
+              <i class="fas fa-share"></i>
+              <p>100</p>
+          </span>
+        </div>
+        <div class="profile_post">
+            <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547?s=800" alt="">
+            <span class="like_count">
+              <i class="fas fa-heart"></i>
+              <p>100</p>
+          </span>
+          <span class="comment_count">
+              <i class="fas fa-comment"></i>
+              <p>100</p>
+          </span>
+          <span class="share_count">
+              <i class="fas fa-share"></i>
+              <p>100</p>
+          </span>
+        </div>
+        <div class="profile_post">
+            <img src="https://gravatar.com/avatar/4474ca42d303761c2901fa819c4f2547?s=1400" alt="">
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
